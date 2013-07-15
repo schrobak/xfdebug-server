@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+from asyncore import loop
+from xfdebug_server import XfDebugServer
+
+try:
+    server = XfDebugServer()
+    loop()
+except KeyboardInterrupt as ki:
+    server.handle_close()
